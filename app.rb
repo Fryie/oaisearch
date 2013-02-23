@@ -13,7 +13,8 @@ get '/' do
 end
 
 post '/result' do
-  query = {"query" => { "match" => { "dc:description" => params[:search_term] }}}.to_json
+  query = {"query" => { "match" => { "dc:description" => { "query" => params[:search_term],
+      "operator" => "and" }}}}.to_json
   
   uri = URI.parse("http://localhost:9200/ukoeln/_search")
   http = Net::HTTP.new(uri.host, uri.port)
