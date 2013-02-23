@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'sinatra/reloader' if development?
 require 'slim'
 
 root = File.dirname(File.absolute_path(__FILE__))
