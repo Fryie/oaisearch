@@ -6,4 +6,7 @@ html
     h1 Suchterm eingeben:
     form action="result" method="post"
       input type="text" name="search_term"
+      select name="search_field"
+        - search_fields.each do |field_string, field_id|
+          option value=field_id = field_string
       input type="submit" name="search_button" value="Suchen"
