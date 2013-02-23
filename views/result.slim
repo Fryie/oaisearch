@@ -3,5 +3,12 @@ html
   head
     title Resultat
   body
-    p Resultat:
-    = term    
+    h1 Resultat:
+    - results.each do |result|
+      h2 = result["_source"]["dc:title"]
+      a href=result["_id"] Artikel
+      table
+        - result["_source"].select { |k, v| k!="dc:title" }.each do |field_key, field_value|
+          tr
+            td = field_key[3..-1]
+            td = field_value

@@ -22,5 +22,6 @@ post '/result' do
   response = http.request(request)
 
   results = JSON.parse(response.body)["hits"]["hits"]
-  slim :result, locals:{term:results.size}
+
+  slim :result, locals:{results:results}
 end
