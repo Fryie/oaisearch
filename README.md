@@ -10,3 +10,11 @@ Requirements: Ruby (1.9, probably) and Rubygems.
 bundle #install gems
 ruby app.rb
 ```
+
+## TODO
+* Improve design and usability
+* Fix encoding problems
+* Search for several fields at once
+* Support phrasal queries
+* Make app more flexible (allow other elasticsearch data sources)
+* ...
